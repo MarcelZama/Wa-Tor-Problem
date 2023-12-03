@@ -1,6 +1,7 @@
 #Marcel Zama 
 # 24/10/2023
 #MakeFile for Wator working Sequencially version
+#GitHub repository: https://github.com/MarcelZama/Wa-Tor-Problem/tree/main
 
 CXX = g++
 CPPFILES= Sequencially.cpp

@@ -15,7 +15,8 @@ using namespace std;
 
 //Creator : Marcel Zama C00260146
 //Date : 26/11/2023
-// Title : Wa-Tor simulation working sequencially
+//Title : Wa-Tor simulation working sequencially
+//GitHub repository: https://github.com/MarcelZama/Wa-Tor-Problem/tree/main
 
 // To Do: Add Parallelism
 

@@ -1,6 +1,7 @@
 #Marcel Zama 
 # 28/10/2023
 #MakeFile for Wator working Parallel version
+#GitHub repository: https://github.com/MarcelZama/Wa-Tor-Problem/tree/main
 
 CXX = g++
 CPPFILES= Parallel.cpp

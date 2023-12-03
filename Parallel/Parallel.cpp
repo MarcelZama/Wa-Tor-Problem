@@ -15,7 +15,8 @@ using namespace std;
 
 //Creator : Marcel Zama C00260146
 //Date : 27/11/2023
-// Title : Wa-Tor simulation working sequencially
+//Title : Wa-Tor simulation working Parallel
+//GitHub repository: https://github.com/MarcelZama/Wa-Tor-Problem/tree/main
 
 // Define constants
 const int NumShark = 10000;    // Initial number of sharks

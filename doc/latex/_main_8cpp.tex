@@ -1,0 +1,237 @@
+\doxysection{Main.\+cpp File Reference}
+\hypertarget{_main_8cpp}{}\label{_main_8cpp}\index{Main.cpp@{Main.cpp}}
+
+
+Wa-\/\+Tor simulation working in parallel using SFML and Open\+MP.  
+
+
+{\ttfamily \#include $<$SFML/\+Graphics.\+hpp$>$}\newline
+{\ttfamily \#include $<$omp.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_cell}{Cell}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_main_8cpp_ac591d0b5bac8ac673f59346213aee569}\label{_main_8cpp_ac591d0b5bac8ac673f59346213aee569} 
+\#define {\bfseries stringify}(name)~\#name
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_main_8cpp_a268ae74e98bc01a0e35f5e215580bcb4}\label{_main_8cpp_a268ae74e98bc01a0e35f5e215580bcb4} 
+enum class {\bfseries Cell\+Type} \{ {\bfseries Ocean}
+, {\bfseries Fish}
+, {\bfseries Shark}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_main_8cpp_ae252594cb40ac9590f60529a06754075}\label{_main_8cpp_ae252594cb40ac9590f60529a06754075} 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_cell}{Cell}} $>$ $>$ {\bfseries grid} (Grid\+Size, std\+::vector$<$ \mbox{\hyperlink{struct_cell}{Cell}} $>$(Grid\+Size, \{ Cell\+Type\+::\+Ocean, 0, 0 \}))
+\item 
+void \mbox{\hyperlink{_main_8cpp_a7a53c66ea6e53201f0eb96c6e25b2559}{initialize\+Grid}} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_cell}{Cell}} $>$ $>$ \&grid)
+\begin{DoxyCompactList}\small\item\em Function to initialize the grid with fish and sharks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_main_8cpp_aecb97f2fb380d51acd0d3a4331ff2668}{swap}} (\mbox{\hyperlink{struct_cell}{Cell}} \&cell1, \mbox{\hyperlink{struct_cell}{Cell}} \&cell2)
+\begin{DoxyCompactList}\small\item\em Function to swap two cells in the grid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_main_8cpp_a537da5d2581d329e0b7de5a2ac0875b0}{update\+Fish}} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_cell}{Cell}} $>$ $>$ \&grid)
+\begin{DoxyCompactList}\small\item\em Function to update the fish population in the grid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_main_8cpp_ab4e8ddacd8799f80c8f983867f0a9747}{update\+Shark}} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_cell}{Cell}} $>$ $>$ \&grid)
+\begin{DoxyCompactList}\small\item\em Function to update the shark population in the grid. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_main_8cpp_aaf0169b8cef39b2b6ea6fe031b959bd0}{shark\+Count}} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_cell}{Cell}} $>$ $>$ \&grid)
+\begin{DoxyCompactList}\small\item\em Function to count the number of sharks in the grid. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_main_8cpp_aef31e28db7305dbd5bce675a8437641a}{fish\+Count}} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_cell}{Cell}} $>$ $>$ \&grid)
+\begin{DoxyCompactList}\small\item\em Function to count the number of fishes in the grid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_main_8cpp_a29cd67348f225dfe4ff42d304e7480b9}{draw\+Grid}} (sf\+::\+Render\+Window \&window, int iterationin, int \mbox{\hyperlink{_main_8cpp_aef31e28db7305dbd5bce675a8437641a}{fish\+Count}}, int \mbox{\hyperlink{_main_8cpp_aaf0169b8cef39b2b6ea6fe031b959bd0}{shark\+Count}}, int durationin, int averagedurationin, std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_cell}{Cell}} $>$ $>$ \&grid)
+\begin{DoxyCompactList}\small\item\em Function to draw the grid using SFML. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Main function to run the simulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_main_8cpp_a0f82d670575f4795252e933d1c629a8e}\label{_main_8cpp_a0f82d670575f4795252e933d1c629a8e} 
+const int {\bfseries Num\+Shark} = 10000
+\item 
+\Hypertarget{_main_8cpp_ad0db3ff560bf286d7c459f0dbf682462}\label{_main_8cpp_ad0db3ff560bf286d7c459f0dbf682462} 
+const int {\bfseries Num\+Fish} = 15000
+\item 
+\Hypertarget{_main_8cpp_aa2f7182eb04f4c6572ed1f0e9078f57e}\label{_main_8cpp_aa2f7182eb04f4c6572ed1f0e9078f57e} 
+const int {\bfseries Fish\+Breed} = 2
+\item 
+\Hypertarget{_main_8cpp_a343e2c380ef517842278df259c98dd49}\label{_main_8cpp_a343e2c380ef517842278df259c98dd49} 
+const int {\bfseries Fish\+Energy\+Value} = 2
+\item 
+\Hypertarget{_main_8cpp_a6f9cfdba53a7d3658d066949098416d1}\label{_main_8cpp_a6f9cfdba53a7d3658d066949098416d1} 
+const int {\bfseries Shark\+Breed} = 8
+\item 
+\Hypertarget{_main_8cpp_a8f42e5e74d32a2eab9fd02e9291a91b2}\label{_main_8cpp_a8f42e5e74d32a2eab9fd02e9291a91b2} 
+const int {\bfseries Starve} = 6
+\item 
+\Hypertarget{_main_8cpp_a550f81d71b4b514a24f5a8e3023a1152}\label{_main_8cpp_a550f81d71b4b514a24f5a8e3023a1152} 
+const int {\bfseries Grid\+Size} = 1000
+\item 
+\Hypertarget{_main_8cpp_a04504bbd98feb1874ae4f01f632ec4d7}\label{_main_8cpp_a04504bbd98feb1874ae4f01f632ec4d7} 
+const int {\bfseries Threads} = 16
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wa-\/\+Tor simulation working in parallel using SFML and Open\+MP. 
+
+\begin{DoxyAuthor}{Author}
+Marcel Zama C00260146 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+27/11/2023 @title Wa-\/\+Tor simulation working Parallel @github \href{https://github.com/MarcelZama/Wa-Tor-Problem/tree/main}{\texttt{ https\+://github.\+com/\+Marcel\+Zama/\+Wa-\/\+Tor-\/\+Problem/tree/main}} 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_main_8cpp_a29cd67348f225dfe4ff42d304e7480b9}\label{_main_8cpp_a29cd67348f225dfe4ff42d304e7480b9} 
+\index{Main.cpp@{Main.cpp}!drawGrid@{drawGrid}}
+\index{drawGrid@{drawGrid}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{drawGrid()}{drawGrid()}}
+{\footnotesize\ttfamily void draw\+Grid (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{int}]{iterationin,  }\item[{int}]{fish\+Count,  }\item[{int}]{shark\+Count,  }\item[{int}]{durationin,  }\item[{int}]{averagedurationin,  }\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_cell}{Cell}} $>$ $>$ \&}]{grid }\end{DoxyParamCaption})}
+
+
+
+Function to draw the grid using SFML. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & SFML window to draw on. \\
+\hline
+{\em iteration} & Current iteration. \\
+\hline
+{\em fish\+Count} & Number of fishes in the grid. \\
+\hline
+{\em shark\+Count} & Number of sharks in the grid. \\
+\hline
+{\em durationin} & Duration of the update process in microseconds. \\
+\hline
+{\em averagedurationin} & Average duration of the update process in microseconds. \\
+\hline
+{\em grid} & Reference to the 2D grid. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_main_8cpp_aef31e28db7305dbd5bce675a8437641a}\label{_main_8cpp_aef31e28db7305dbd5bce675a8437641a} 
+\index{Main.cpp@{Main.cpp}!fishCount@{fishCount}}
+\index{fishCount@{fishCount}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{fishCount()}{fishCount()}}
+{\footnotesize\ttfamily int fish\+Count (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_cell}{Cell}} $>$ $>$ \&}]{grid }\end{DoxyParamCaption})}
+
+
+
+Function to count the number of fishes in the grid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grid} & Reference to the 2D grid. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of fishes in the grid. 
+\end{DoxyReturn}
+\Hypertarget{_main_8cpp_a7a53c66ea6e53201f0eb96c6e25b2559}\label{_main_8cpp_a7a53c66ea6e53201f0eb96c6e25b2559} 
+\index{Main.cpp@{Main.cpp}!initializeGrid@{initializeGrid}}
+\index{initializeGrid@{initializeGrid}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{initializeGrid()}{initializeGrid()}}
+{\footnotesize\ttfamily void initialize\+Grid (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_cell}{Cell}} $>$ $>$ \&}]{grid }\end{DoxyParamCaption})}
+
+
+
+Function to initialize the grid with fish and sharks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grid} & Reference to the 2D grid. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{Main.cpp@{Main.cpp}!main@{main}}
+\index{main@{main}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main function to run the simulation. 
+
+\begin{DoxyReturn}{Returns}
+0 on successful execution. 
+\end{DoxyReturn}
+\Hypertarget{_main_8cpp_aaf0169b8cef39b2b6ea6fe031b959bd0}\label{_main_8cpp_aaf0169b8cef39b2b6ea6fe031b959bd0} 
+\index{Main.cpp@{Main.cpp}!sharkCount@{sharkCount}}
+\index{sharkCount@{sharkCount}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{sharkCount()}{sharkCount()}}
+{\footnotesize\ttfamily int shark\+Count (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_cell}{Cell}} $>$ $>$ \&}]{grid }\end{DoxyParamCaption})}
+
+
+
+Function to count the number of sharks in the grid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grid} & Reference to the 2D grid. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of sharks in the grid. 
+\end{DoxyReturn}
+\Hypertarget{_main_8cpp_aecb97f2fb380d51acd0d3a4331ff2668}\label{_main_8cpp_aecb97f2fb380d51acd0d3a4331ff2668} 
+\index{Main.cpp@{Main.cpp}!swap@{swap}}
+\index{swap@{swap}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily void swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cell}{Cell}} \&}]{cell1,  }\item[{\mbox{\hyperlink{struct_cell}{Cell}} \&}]{cell2 }\end{DoxyParamCaption})}
+
+
+
+Function to swap two cells in the grid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cell1} & First cell to swap. \\
+\hline
+{\em cell2} & Second cell to swap. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_main_8cpp_a537da5d2581d329e0b7de5a2ac0875b0}\label{_main_8cpp_a537da5d2581d329e0b7de5a2ac0875b0} 
+\index{Main.cpp@{Main.cpp}!updateFish@{updateFish}}
+\index{updateFish@{updateFish}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{updateFish()}{updateFish()}}
+{\footnotesize\ttfamily void update\+Fish (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_cell}{Cell}} $>$ $>$ \&}]{grid }\end{DoxyParamCaption})}
+
+
+
+Function to update the fish population in the grid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grid} & Reference to the 2D grid. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_main_8cpp_ab4e8ddacd8799f80c8f983867f0a9747}\label{_main_8cpp_ab4e8ddacd8799f80c8f983867f0a9747} 
+\index{Main.cpp@{Main.cpp}!updateShark@{updateShark}}
+\index{updateShark@{updateShark}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{updateShark()}{updateShark()}}
+{\footnotesize\ttfamily void update\+Shark (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_cell}{Cell}} $>$ $>$ \&}]{grid }\end{DoxyParamCaption})}
+
+
+
+Function to update the shark population in the grid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grid} & Reference to the 2D grid. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,52 @@
+Water Project:
+
+A program that shows a solution to the Wa-Tor problem which is a population dynamics simulation,
+Where the key aspects of it being Sharks need to eat fish ,fish needs to survive and multiply.
+
+Author:
+Name: Marcel Zama
+College Id: C00260146
+Date 27/11/2023
+Github: https://github.com/MarcelZama/Wa-Tor-Problem
+
+Licence:
+
+This project is safeguarded by the GNU General Public License (GPL) to promote the principles of open-source software and ensure that its benefits and freedoms are extended to all users.
+
+See Licence for more details.
+
+Installation:
+
+1. Begin by installing GCC on your system.
+2. Proceed to install Make for efficient project building.
+3. Ensure that the pthread library is included in your system's library path.
+
+Now, follow these steps in your terminal:
+
+1. Open the terminal application.
+2. Navigate to the specified folder.
+
+For building the executable:
+
+1. Execute the command "make" inside the terminal to construct the final executable.
+
+For running the executable:/Applications/Discord.app
+
+1.Employ the shell command ./ followed by the executable's name. Or double-click on it inside the directory folder.
+
+Requirements:
+
+A C++ compiler is required for executing the project.
+
+This project is not specific to any platforms, should work on any platforms if the above requirement is fallowed.
+
+Files:
+
+Makefile - MakeFile processes and combines all the compiled code into an executable
+Parallel.cpp - Main file ,the place where all the magic happens
+LICENSE.rtf - GNU GENERAL PUBLIC LICENSE
+
+TO DO:
+
+
+

@@ -49,8 +49,8 @@ Wator is a well-known ecological simulation model that depicts the interactions 
 ![image](https://github.com/MarcelZama/Wa-Tor-Problem/assets/92083030/d6af9815-3457-4ca7-b728-51a73fd69806)
 ![image](https://github.com/MarcelZama/Wa-Tor-Problem/assets/92083030/19b376a5-3353-453f-a978-0bbddaf7cd3d)
 
-Authors
+Author:
 Marcel Zama
 
-License
+License:
 This project is licensed under the MIT License - see the LICENSE.md file for details.
